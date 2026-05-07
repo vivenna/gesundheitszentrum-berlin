@@ -1,13 +1,535 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Arztpraxis</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gesundheitszentrum Berlin – Moderne Medizin in Berlin-Mitte</title>
+  <meta
+    name="description"
+    content="Das Gesundheitszentrum Berlin bietet moderne Allgemeinmedizin, Vorsorge, Diagnostik, Impfungen und Check-ups – mit einem erfahrenen Team und klaren Abläufen im Herzen Berlins."
+  />
+  <meta name="theme-color" content="#0c4a6e" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%230c4a6e'/%3E%3Cstop offset='60%25' stop-color='%230ea5e9'/%3E%3Cstop offset='100%25' stop-color='%2393c5fd'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='50' cy='50' r='46' fill='url(%23g)'/%3E%3Ccircle cx='50' cy='50' r='14' fill='%23ffffff'/%3E%3Ccircle cx='50' cy='50' r='6' fill='%230c4a6e'/%3E%3C/svg%3E"
+  />
+  <link rel="stylesheet" href="assets/styles.css" />
 </head>
 <body>
-  <h1>Willkommen in unserer Arztpraxis</h1>
-  <p>Unsere Leistungen, Sprechzeiten und Kontaktdaten finden Sie hier.</p>
-  <p>Wir danken Ihnen, dass Sie unsere Website besuchen!</p>
+  <a class="skip-link" href="#main">Zum Inhalt</a>
+
+  <div id="siteHeader"></div>
+  <noscript>
+    <div class="container" style="padding: 18px 24px;">
+      <p><strong>Navigation:</strong> <a href="index.html">Start</a> · <a href="leistungen.html">Leistungen</a> · <a href="ueber-uns.html">Über uns</a> · <a href="kontakt.html">Kontakt</a> · <a href="termin.html">Termin</a></p>
+    </div>
+  </noscript>
+
+  <main id="main">
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content reveal">
+        <p class="eyebrow">Moderne Medizin in Berlin-Mitte</p>
+        <h1>Ihre Gesundheit. <span>Vertrauen,</span><br />das bleibt.</h1>
+        <p class="lead">
+          Im Gesundheitszentrum Berlin verbinden wir strukturierte Abläufe mit
+          persönlicher Zuwendung. Allgemeinmedizin, Vorsorge, Diagnostik und
+          Beratung – an einem Ort, in klarer Sprache.
+        </p>
+        <div class="hero-cta">
+          <a href="termin.html" class="btn btn-primary">
+            Termin vereinbaren
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a href="leistungen.html" class="btn btn-ghost">Leistungen ansehen</a>
+        </div>
+        <div class="hero-trust">
+          <div class="hero-trust-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            Klarer Ablauf &amp; Dokumentation
+          </div>
+          <div class="hero-trust-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            Vorsorge &amp; Check-ups
+          </div>
+          <div class="hero-trust-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            Mehrsprachiges Team
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual reveal">
+        <img
+          class="hero-image"
+          src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&w=1100&q=80"
+          alt="Ärztin im Patientengespräch in moderner Praxis"
+          loading="eager"
+        />
+        <div class="hero-card card-1">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+          <div>
+            <strong>30+ Jahre</strong>
+            <span>Erfahrung in der Versorgung</span>
+          </div>
+        </div>
+        <div class="hero-card card-2">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <div>
+            <strong>4.9 / 5.0</strong>
+            <span>1.200+ Patientenbewertungen</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HIGHLIGHTS BAR ============ -->
+  <section class="highlights">
+    <div class="container reveal">
+      <div class="highlight">
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div>
+          <h4>Kurze Wartezeiten</h4>
+          <p>Termin meist innerhalb weniger Tage – auch online buchbar.</p>
+        </div>
+      </div>
+      <div class="highlight">
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
+        </div>
+        <div>
+          <h4>Strukturierte Diagnostik</h4>
+          <p>Basisdiagnostik, Risikoprofile und klare Befundbesprechung.</p>
+        </div>
+      </div>
+      <div class="highlight">
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <div>
+          <h4>Alle Kassen &amp; Privat</h4>
+          <p>Gesetzlich, privat und Selbstzahler – wir beraten Sie umfassend.</p>
+        </div>
+      </div>
+      <div class="highlight">
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+        <div>
+          <h4>Mehrsprachig</h4>
+          <p>Beratung auf Deutsch, Englisch, Türkisch, Russisch und Französisch.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="about" id="praxis">
+    <div class="container">
+      <div class="about-image reveal">
+        <img
+          src="https://images.unsplash.com/photo-1631815589968-fdb09a223b1e?auto=format&fit=crop&w=900&q=80"
+          alt="Modernes Empfangs- und Wartezimmer im Gesundheitszentrum"
+        />
+        <div class="about-stats">
+          <div>
+            <strong>15.000+</strong>
+            <span>Patienten / Jahr</span>
+          </div>
+          <div>
+            <strong>8</strong>
+            <span>Fachärzt:innen</span>
+          </div>
+          <div>
+            <strong>2.500+</strong>
+            <span>Operationen jährlich</span>
+          </div>
+        </div>
+      </div>
+      <div class="about-text reveal">
+        <p class="eyebrow">Willkommen im Gesundheitszentrum Berlin</p>
+        <h2>Moderne Medizin mit Herz – im Herzen Berlins</h2>
+        <p>
+          Seit über drei Jahrzehnten stehen wir für verlässliche, patientenorientierte Versorgung.
+          Unser Fokus liegt auf Allgemeinmedizin, Vorsorge und strukturierter Diagnostik –
+          mit klaren Abläufen und verständlicher Kommunikation.
+        </p>
+        <ul>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <span><strong>Verständliche Medizin</strong> – klare Empfehlungen statt Fachjargon</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <span><strong>Prävention &amp; Check-ups</strong> – risikoangepasst und gut planbar</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <span><strong>Barrierearme Praxis</strong> mit ruhiger Atmosphäre und klarer Orientierung</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <span><strong>Persönliche Betreuung</strong> – ein Ansprechpartner über den gesamten Ablauf</span>
+          </li>
+        </ul>
+        <a href="ueber-uns.html" class="btn btn-ghost">Mehr über uns</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SERVICES ============ -->
+  <section class="services" id="leistungen">
+    <div class="container">
+      <div class="services-header reveal">
+        <p class="eyebrow" style="justify-content: center;">Unser Leistungsspektrum</p>
+        <h2>Medizinische Leistungen – klar gebündelt</h2>
+        <p>Allgemeinmedizin, Vorsorge, Diagnostik, Impfungen, Check-ups und Beratung – strukturiert, verständlich und zuverlässig.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <h3>Allgemeinmedizin</h3>
+          <p>Akute Beschwerden, chronische Erkrankungen, Medikation – kompetent und verständlich betreut.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6-4.35-9-8.5C.9 9.1 2.3 5.8 5.6 5.1c1.7-.4 3.4.2 4.4 1.5 1-1.3 2.7-1.9 4.4-1.5 3.3.7 4.7 4 2.6 7.4-3 4.15-9 8.5-9 8.5z"/></svg>
+          </div>
+          <h3>Vorsorge</h3>
+          <p>Individuelle Präventionskonzepte – risikoangepasst, evidenzbasiert und gut planbar.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7l-6-4H6a2 2 0 0 0-2 2v14z"/><path d="M14 3v4h6"/><path d="M8 13h8"/><path d="M8 17h8"/></svg>
+          </div>
+          <h3>Diagnostik</h3>
+          <p>Strukturierte Abklärung – Blutwerte, EKG, Basisdiagnostik und koordinierte Weiterleitungen.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 13c0 4-7 8-7 8s-7-4-7-8a7 7 0 0 1 14 0z"/><path d="M12 21V3"/><path d="M8 7h8"/></svg>
+          </div>
+          <h3>Impfungen</h3>
+          <p>Impfcheck, Standard- und Reiseimpfungen – mit sauberer Dokumentation.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5A8.48 8.48 0 0 1 21 11v.5z"/></svg>
+          </div>
+          <h3>Check-ups</h3>
+          <p>Gesundheits-Checks mit Fokus auf Herz-Kreislauf, Stoffwechsel und Lebensstil.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5z"/></svg>
+          </div>
+          <h3>Beratung</h3>
+          <p>Prävention, Ernährung, Stressmanagement, Zweitmeinung – patientenzentriert und ohne Fachjargon.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TECH / DIAGNOSTIK ============ -->
+  <section class="tech" id="diagnostik">
+    <div class="container">
+      <div class="reveal">
+        <p class="eyebrow">Diagnostik</p>
+        <h2>Abklärung, die verständlich bleibt</h2>
+        <p>
+          Wir setzen auf strukturierte Basisdiagnostik und klare Befundbesprechung.
+          Wenn Spezialdiagnostik nötig ist, koordinieren wir die nächsten Schritte.
+        </p>
+        <ul class="tech-list">
+          <li>
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h3l3-9 6 18 3-9h3"/></svg>
+            </div>
+            <div>
+              <strong>Labor &amp; Basisdiagnostik</strong>
+              <span>Blutwerte, Vitalparameter, strukturierte Anamnese</span>
+            </div>
+          </li>
+          <li>
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14 14 0 0 1 0 20"/><path d="M12 2a14 14 0 0 0 0 20"/><line x1="2" y1="12" x2="22" y2="12"/></svg>
+            </div>
+            <div>
+              <strong>EKG &amp; kardiovaskulärer Check</strong>
+              <span>Risikoprofil, Blutdruck, Herz-Kreislauf-Screening</span>
+            </div>
+          </li>
+          <li>
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+            </div>
+            <div>
+              <strong>Koordinierte Weiterleitung</strong>
+              <span>Wenn nötig: Facharzttermine und Diagnostik gezielt einsteuern</span>
+            </div>
+          </li>
+          <li>
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="9"/></svg>
+            </div>
+            <div>
+              <strong>Dokumentation &amp; Plan</strong>
+              <span>Verständliche Zusammenfassung und nächste Schritte</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="tech-image reveal">
+        <img
+          src="https://images.unsplash.com/photo-1582719471384-894fbb16e074?auto=format&fit=crop&w=1100&q=80"
+          alt="Moderne medizinische Diagnostik in der Praxis"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TEAM ============ -->
+  <section class="team" id="team">
+    <div class="container">
+      <div class="team-header reveal">
+        <div>
+          <p class="eyebrow">Team</p>
+          <h2>Ein Team, das strukturiert arbeitet – und menschlich bleibt</h2>
+        </div>
+        <a href="termin.html" class="btn btn-ghost">Termin vereinbaren</a>
+      </div>
+      <div class="team-grid">
+        <div class="team-card reveal">
+          <div class="team-photo">
+            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=600&q=80" alt="Porträt Dr. med. Jana Becker" />
+          </div>
+          <div class="team-info">
+            <span class="team-role">Allgemeinmedizin</span>
+            <h3>Dr. med. Jana Becker</h3>
+            <p>Schwerpunkt Prävention, Stoffwechsel und patientenzentrierte Langzeitbetreuung.</p>
+          </div>
+        </div>
+        <div class="team-card reveal">
+          <div class="team-photo">
+            <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=600&q=80" alt="Porträt Dr. med. Elias Wagner" />
+          </div>
+          <div class="team-info">
+            <span class="team-role">Diagnostik</span>
+            <h3>Dr. med. Elias Wagner</h3>
+            <p>Strukturierte Abklärung, Risiko-Screenings und Befundbesprechung – verständlich erklärt.</p>
+          </div>
+        </div>
+        <div class="team-card reveal">
+          <div class="team-photo">
+            <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=600&q=80" alt="Porträt Sarah Klein" />
+          </div>
+          <div class="team-info">
+            <span class="team-role">Praxismanagement</span>
+            <h3>Sarah Klein</h3>
+            <p>Koordination, Terminlogik und Abläufe – damit Sie schnell ans Ziel kommen.</p>
+          </div>
+        </div>
+        <div class="team-card reveal">
+          <div class="team-photo">
+            <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=600&q=80" alt="Porträt Amir Yilmaz" />
+          </div>
+          <div class="team-info">
+            <span class="team-role">Assistenz</span>
+            <h3>Amir Yilmaz</h3>
+            <p>Patientenaufnahme, Impfmanagement und Vorbereitung der Diagnostik.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIALS ============ -->
+  <section id="patienten">
+    <div class="container">
+      <div class="services-header reveal">
+        <p class="eyebrow" style="justify-content: center;">Patientenstimmen</p>
+        <h2>Vertrauen, das man weiterempfiehlt</h2>
+        <p>Kurze Rückmeldungen – weil gute Medizin nicht nur Fachlichkeit, sondern auch Gefühl ist.</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial reveal">
+          <div class="stars" aria-label="5 von 5 Sternen">
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9 17 14 19 21 12 17 5 21 7 14 2 9 9 9 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9 17 14 19 21 12 17 5 21 7 14 2 9 9 9 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9 17 14 19 21 12 17 5 21 7 14 2 9 9 9 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9 17 14 19 21 12 17 5 21 7 14 2 9 9 9 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9 17 14 19 21 12 17 5 21 7 14 2 9 9 9 12 2"/></svg>
+          </div>
+          <p>„Vom ersten Anruf bis zum Termin war alles klar strukturiert. Sehr freundlich, gut organisiert und ohne Zeitdruck im Gespräch.“</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">PE</div>
+            <div class="author-info">
+              <strong>Petra E.</strong>
+              <span>Allgemeinmedizin · 2026</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial reveal">
+          <div class="stars" aria-label="5 von 5 Sternen">
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9 17 14 19 21 12 17 5 21 7 14 2 9 9 9 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9 17 14 19 21 12 17 5 21 7 14 2 9 9 9 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9 17 14 19 21 12 17 5 21 7 14 2 9 9 9 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9 17 14 19 21 12 17 5 21 7 14 2 9 9 9 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9 17 14 19 21 12 17 5 21 7 14 2 9 9 9 12 2"/></svg>
+          </div>
+          <p>„Sehr gute Beratung – verständlich, ehrlich und ohne Druck. Ich wusste genau, welche nächsten Schritte sinnvoll sind.“</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">MK</div>
+            <div class="author-info">
+              <strong>Markus K.</strong>
+              <span>Vorsorge · 2026</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial reveal">
+          <div class="stars" aria-label="5 von 5 Sternen">
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9 17 14 19 21 12 17 5 21 7 14 2 9 9 9 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9 17 14 19 21 12 17 5 21 7 14 2 9 9 9 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9 17 14 19 21 12 17 5 21 7 14 2 9 9 9 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9 17 14 19 21 12 17 5 21 7 14 2 9 9 9 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9 17 14 19 21 12 17 5 21 7 14 2 9 9 9 12 2"/></svg>
+          </div>
+          <p>„Sehr angenehme Atmosphäre. Das Team hat sich Zeit genommen und alles verständlich erklärt – gerade bei Impfungen fühlten wir uns gut beraten.“</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">FB</div>
+            <div class="author-info">
+              <strong>Familie B.</strong>
+              <span>Impfberatung · 2026</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SPRECHZEITEN / KONTAKT ============ -->
+  <section class="visit" id="sprechzeiten">
+    <div class="container">
+      <div class="services-header reveal">
+        <p class="eyebrow" style="justify-content: center;">Sprechzeiten &amp; Anfahrt</p>
+        <h2>Hier finden Sie uns</h2>
+      </div>
+      <div class="visit-grid">
+        <div class="visit-card reveal">
+          <h3>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Unsere Sprechzeiten
+          </h3>
+          <ul class="hours-list" id="hoursList">
+            <li data-day="1"><span>Montag</span><span>8:00 – 18:00</span></li>
+            <li data-day="2"><span>Dienstag</span><span>8:00 – 18:00</span></li>
+            <li data-day="3"><span>Mittwoch</span><span>8:00 – 14:00</span></li>
+            <li data-day="4"><span>Donnerstag</span><span>8:00 – 19:00</span></li>
+            <li data-day="5"><span>Freitag</span><span>8:00 – 16:00</span></li>
+            <li data-day="6"><span>Samstag</span><span>9:00 – 13:00</span></li>
+            <li data-day="0"><span>Sonntag</span><span>geschlossen</span></li>
+          </ul>
+          <div class="visit-note">
+            <strong>Akute Notfälle</strong> können wir außerhalb der Sprechzeiten
+            telefonisch koordinieren – rufen Sie uns an unter
+            <a href="tel:+4930123456789" style="color: var(--primary-700); text-decoration: underline;">+49&nbsp;30&nbsp;123&nbsp;456&nbsp;789</a>.
+          </div>
+        </div>
+        <div class="visit-card reveal" id="kontakt">
+          <h3>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Anfahrt &amp; Kontakt
+          </h3>
+          <div class="location-info">
+            <div class="location-item">
+              <div class="icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <strong>Gesundheitszentrum Berlin</strong>
+                <span>Friedrichstraße 142, 10117 Berlin-Mitte</span>
+              </div>
+            </div>
+            <div class="location-item">
+              <div class="icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <div>
+                <strong>Telefon</strong>
+                <span><a href="tel:+4930123456789">+49&nbsp;30&nbsp;123&nbsp;456&nbsp;789</a></span>
+              </div>
+            </div>
+            <div class="location-item">
+              <div class="icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div>
+                <strong>E-Mail</strong>
+                <span><a href="mailto:kontakt@gesundheitszentrum-berlin.de">kontakt@gesundheitszentrum-berlin.de</a></span>
+              </div>
+            </div>
+            <div class="location-item">
+              <div class="icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="3"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+              </div>
+              <div>
+                <strong>Anreise</strong>
+                <span>U-/S-Bahnhof Friedrichstraße (4&nbsp;Min.) · Tiefgarage im Haus</span>
+              </div>
+            </div>
+          </div>
+          <a href="tel:+4930123456789" class="btn btn-primary" style="margin-top: 24px; width: 100%;">
+            Jetzt anrufen
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA BANNER ============ -->
+  <section class="cta-banner">
+    <div class="container reveal">
+      <div>
+        <h2>Termin in wenigen Klicks vereinbaren</h2>
+        <p>
+          Online anfragen – auch außerhalb der Sprechzeiten. Sie erhalten
+          zeitnah eine Bestätigung per E-Mail.
+        </p>
+      </div>
+      <div class="cta-banner-actions">
+        <a href="termin.html" class="btn btn-primary">
+          Termin online anfragen
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="tel:+4930123456789" class="btn btn-outline-light">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          +49&nbsp;30&nbsp;123&nbsp;456&nbsp;789
+        </a>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <div id="siteFooter"></div>
+
+  <script src="assets/components.js" defer></script>
+  <script src="assets/main.js" defer></script>
 </body>
 </html>
