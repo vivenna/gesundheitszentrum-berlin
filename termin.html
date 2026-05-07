@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terminvereinbarung – Gesundheitszentrum Berlin</title>
+  <meta name="description" content="Termin online anfragen: Leistung auswählen, Kontaktdaten angeben und Wunschzeiten eintragen. Mit klaren Schritten und Datenschutz-Hinweis." />
+  <meta name="theme-color" content="#0c4a6e" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%230c4a6e'/%3E%3Cstop offset='60%25' stop-color='%230ea5e9'/%3E%3Cstop offset='100%25' stop-color='%2393c5fd'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='50' cy='50' r='46' fill='url(%23g)'/%3E%3Ccircle cx='50' cy='50' r='14' fill='%23ffffff'/%3E%3Ccircle cx='50' cy='50' r='6' fill='%230c4a6e'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Zum Inhalt</a>
+
+  <div id="siteHeader"></div>
+  <noscript>
+    <div class="container" style="padding: 18px 24px;">
+      <p><strong>Navigation:</strong> <a href="index.html">Start</a> · <a href="leistungen.html">Leistungen</a> · <a href="ueber-uns.html">Über uns</a> · <a href="kontakt.html">Kontakt</a> · <a href="termin.html">Termin</a></p>
+    </div>
+  </noscript>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container reveal">
+        <p class="eyebrow">Terminvereinbarung</p>
+        <h1>In wenigen Schritten zum <span class="text-gradient">Termin</span>.</h1>
+        <p class="lead" style="max-width: 760px;">
+          Wählen Sie eine Leistung, teilen Sie uns Ihre Wunschzeiten mit – wir bestätigen den Termin per E-Mail.
+          Klarer Ablauf, gute Lesbarkeit, mobile optimiert.
+        </p>
+        <div class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="index.html">Start</a>
+          <span aria-hidden="true">/</span>
+          <span>Terminvereinbarung</span>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="ablauf">
+      <div class="container">
+        <div class="grid-3" style="margin-top: 0;">
+          <div class="card card-pad reveal">
+            <p class="eyebrow">1</p>
+            <h2 id="ablauf" style="margin-top: 0; font-size: 1.4rem;">Leistung auswählen</h2>
+            <p>Damit wir Sie direkt an die richtige Ansprechperson weiterleiten können.</p>
+          </div>
+          <div class="card card-pad reveal">
+            <p class="eyebrow">2</p>
+            <h2 style="margin-top: 0; font-size: 1.4rem;">Wunschzeiten angeben</h2>
+            <p>Sie nennen zwei Zeitfenster – wir schlagen den passendsten Termin vor.</p>
+          </div>
+          <div class="card card-pad reveal">
+            <p class="eyebrow">3</p>
+            <h2 style="margin-top: 0; font-size: 1.4rem;">Bestätigung erhalten</h2>
+            <p>Sie bekommen eine Rückmeldung per E-Mail (und bei Bedarf telefonisch).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="terminformular">
+      <div class="container">
+        <div class="grid-2" style="align-items: start;">
+          <div class="card card-pad reveal">
+            <h2 id="terminformular" style="margin-top: 0;">Terminformular</h2>
+            <p class="help">Pflichtfelder sind mit * markiert.</p>
+
+            <form class="form" action="#" method="post" aria-describedby="privacy-hint">
+              <div class="field">
+                <label for="leistung">Gewünschte Leistung *</label>
+                <select id="leistung" name="leistung" required>
+                  <option value="" selected disabled>Bitte auswählen</option>
+                  <option>Allgemeinmedizin</option>
+                  <option>Vorsorge</option>
+                  <option>Diagnostik</option>
+                  <option>Impfungen</option>
+                  <option>Check-ups</option>
+                  <option>Beratung</option>
+                </select>
+              </div>
+
+              <div class="form-grid">
+                <div class="field">
+                  <label for="vorname">Vorname *</label>
+                  <input id="vorname" name="vorname" autocomplete="given-name" required />
+                </div>
+                <div class="field">
+                  <label for="nachname">Nachname *</label>
+                  <input id="nachname" name="nachname" autocomplete="family-name" required />
+                </div>
+              </div>
+
+              <div class="form-grid">
+                <div class="field">
+                  <label for="email">E-Mail *</label>
+                  <input id="email" type="email" name="email" autocomplete="email" required />
+                </div>
+                <div class="field">
+                  <label for="telefon">Telefon</label>
+                  <input id="telefon" type="tel" name="telefon" autocomplete="tel" />
+                </div>
+              </div>
+
+              <div class="form-grid">
+                <div class="field">
+                  <label for="wunsch1">Wunschzeit 1</label>
+                  <input id="wunsch1" name="wunsch1" placeholder="z. B. Mo–Mi vormittags" />
+                </div>
+                <div class="field">
+                  <label for="wunsch2">Wunschzeit 2</label>
+                  <input id="wunsch2" name="wunsch2" placeholder="z. B. Do nachmittags" />
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="hinweis">Hinweise (optional)</label>
+                <textarea id="hinweis" name="hinweis" placeholder="Kurze Beschreibung Ihres Anliegens (ohne sensible Details)"></textarea>
+              </div>
+
+              <div class="notice" id="privacy-hint">
+                <strong>Datenschutz-Hinweis:</strong> Bitte keine sensiblen medizinischen Daten im Formular.
+                Details besprechen wir telefonisch oder im Termin. Weitere Informationen in der
+                <a href="datenschutz.html">Datenschutzerklärung</a>.
+              </div>
+
+              <button class="btn btn-primary" type="submit">Termin anfragen</button>
+              <p class="help" style="margin: 0;">Hinweis: Das Formular ist aktuell als UI/UX-Vorlage angelegt (ohne Backend).</p>
+            </form>
+          </div>
+
+          <div class="reveal" style="display: grid; gap: 18px;">
+            <div class="card card-pad">
+              <h2 style="margin-top: 0;">Warum online anfragen?</h2>
+              <ul style="margin: 0; padding-left: 18px; color: var(--muted);">
+                <li>Sie wählen die Leistung – weniger Rückfragen.</li>
+                <li>Wunschzeiten sparen Abstimmungsaufwand.</li>
+                <li>Sie erhalten eine klare Bestätigung per E-Mail.</li>
+              </ul>
+            </div>
+
+            <div class="card card-pad">
+              <h2 style="margin-top: 0;">Alternativ: telefonisch</h2>
+              <p>Wenn es dringend ist oder Sie lieber direkt sprechen möchten:</p>
+              <a class="btn btn-ghost" href="tel:+4930123456789">+49&nbsp;30&nbsp;123&nbsp;456&nbsp;789</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="siteFooter"></div>
+
+  <script src="assets/components.js" defer></script>
+  <script src="assets/main.js" defer></script>
+</body>
+</html>
