@@ -1,13 +1,1501 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Arztpraxis</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Augenzentrum Berlin – Moderne Augenarztpraxis im Herzen Berlins</title>
+  <meta
+    name="description"
+    content="Das Augenzentrum Berlin ist eine moderne Augenarztpraxis mit modernster Diagnostik, OP-Zentrum und einem erfahrenen Team. Vorsorge, Grauer & Grüner Star, Netzhaut, LASIK, Kinderaugenheilkunde."
+  />
+  <meta name="theme-color" content="#0c4a6e" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%230c4a6e'/%3E%3Cstop offset='60%25' stop-color='%230ea5e9'/%3E%3Cstop offset='100%25' stop-color='%2393c5fd'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='50' cy='50' r='46' fill='url(%23g)'/%3E%3Ccircle cx='50' cy='50' r='14' fill='%23ffffff'/%3E%3Ccircle cx='50' cy='50' r='6' fill='%230c4a6e'/%3E%3C/svg%3E"
+  />
+  <style>
+    /* =====================================================
+       Reset & Basis
+       ===================================================== */
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-size: 17px;
+      line-height: 1.65;
+      color: #0f172a;
+      background: #ffffff;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    img { max-width: 100%; display: block; height: auto; }
+    a { color: inherit; text-decoration: none; }
+    button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+    :root {
+      --primary-900: #0c4a6e;
+      --primary-800: #075985;
+      --primary-700: #0369a1;
+      --primary-600: #0284c7;
+      --primary-500: #0ea5e9;
+      --primary-400: #38bdf8;
+      --primary-100: #e0f2fe;
+      --primary-50: #f0f9ff;
+      --accent: #14b8a6;
+      --ink: #0f172a;
+      --ink-2: #1e293b;
+      --muted: #475569;
+      --muted-2: #64748b;
+      --line: #e2e8f0;
+      --bg-soft: #f8fafc;
+      --gold: #f59e0b;
+      --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.04), 0 1px 3px rgba(15, 23, 42, 0.06);
+      --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.06), 0 2px 4px rgba(15, 23, 42, 0.04);
+      --shadow-lg: 0 20px 40px -12px rgba(2, 132, 199, 0.18), 0 8px 16px rgba(15, 23, 42, 0.06);
+      --radius: 14px;
+      --radius-lg: 22px;
+      --container: 1200px;
+    }
+
+    /* =====================================================
+       Typography
+       ===================================================== */
+    h1, h2, h3, h4 {
+      font-family: "Fraunces", "Inter", Georgia, serif;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      margin: 0 0 0.5em;
+      line-height: 1.15;
+    }
+    h1 { font-size: clamp(2.2rem, 4.5vw, 3.6rem); }
+    h2 { font-size: clamp(1.8rem, 3vw, 2.6rem); }
+    h3 { font-size: clamp(1.2rem, 1.6vw, 1.4rem); }
+    p  { margin: 0 0 1em; color: var(--muted); }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: "Inter", sans-serif;
+      font-weight: 600;
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--primary-700);
+    }
+    .eyebrow::before {
+      content: "";
+      width: 24px;
+      height: 2px;
+      background: var(--primary-500);
+      border-radius: 2px;
+    }
+
+    /* =====================================================
+       Layout helpers
+       ===================================================== */
+    .container { max-width: var(--container); margin: 0 auto; padding: 0 24px; }
+    section { padding: 96px 0; }
+    @media (max-width: 768px) { section { padding: 64px 0; } }
+
+    /* =====================================================
+       Buttons
+       ===================================================== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 24px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: transform 0.15s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;
+      white-space: nowrap;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary-700), var(--primary-500));
+      color: #ffffff;
+      box-shadow: 0 8px 20px rgba(2, 132, 199, 0.25);
+    }
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 12px 28px rgba(2, 132, 199, 0.35);
+    }
+    .btn-ghost {
+      background: #ffffff;
+      color: var(--primary-800);
+      border: 1px solid var(--line);
+    }
+    .btn-ghost:hover { background: var(--primary-50); border-color: var(--primary-100); }
+    .btn-outline-light {
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+    }
+    .btn-outline-light:hover { background: rgba(255, 255, 255, 0.12); border-color: #ffffff; }
+    .btn svg { width: 18px; height: 18px; }
+
+    /* =====================================================
+       Top bar
+       ===================================================== */
+    .topbar { background: var(--primary-900); color: #cfe9f7; font-size: 0.85rem; }
+    .topbar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .topbar a { color: #ffffff; }
+    .topbar-info { display: flex; gap: 24px; flex-wrap: wrap; align-items: center; }
+    .topbar-info span { display: inline-flex; align-items: center; gap: 8px; }
+    .topbar-info svg { width: 16px; height: 16px; color: var(--primary-400); }
+    .topbar-actions { display: flex; gap: 18px; }
+    @media (max-width: 720px) {
+      .topbar-info { font-size: 0.8rem; gap: 14px; }
+      .topbar-actions { display: none; }
+    }
+
+    /* =====================================================
+       Header / Navigation
+       ===================================================== */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: saturate(180%) blur(12px);
+      -webkit-backdrop-filter: saturate(180%) blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 0;
+      gap: 24px;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 700; color: var(--ink); }
+    .brand-logo {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #0c4a6e, #0ea5e9 60%, #93c5fd);
+      position: relative;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 6px 14px rgba(14, 165, 233, 0.3);
+    }
+    .brand-logo::after {
+      content: "";
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #ffffff;
+      box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.25);
+    }
+    .brand-logo::before {
+      content: "";
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--primary-900);
+      z-index: 2;
+    }
+    .brand-text { display: flex; flex-direction: column; line-height: 1.1; }
+    .brand-text strong { font-size: 1.1rem; letter-spacing: -0.01em; }
+    .brand-text span { font-size: 0.78rem; color: var(--muted-2); font-weight: 500; letter-spacing: 0.04em; }
+    .nav-menu { display: flex; gap: 4px; align-items: center; }
+    .nav-menu a {
+      padding: 10px 14px;
+      border-radius: 10px;
+      color: var(--ink-2);
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: background 0.15s, color 0.15s;
+    }
+    .nav-menu a:hover { background: var(--primary-50); color: var(--primary-800); }
+    .nav-cta { margin-left: 12px; }
+    .nav-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      align-items: center;
+      justify-content: center;
+      color: var(--ink);
+    }
+    .nav-toggle:hover { background: var(--primary-50); }
+    .nav-toggle svg { width: 24px; height: 24px; }
+    @media (max-width: 960px) {
+      .nav-menu, .nav-cta { display: none; }
+      .nav-toggle { display: inline-flex; }
+      .nav-menu.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0; right: 0;
+        background: #ffffff;
+        padding: 12px 16px 18px;
+        border-bottom: 1px solid var(--line);
+        gap: 0;
+      }
+      .nav-menu.open a { padding: 12px 14px; border-bottom: 1px solid var(--line); }
+      .nav-menu.open a:last-of-type { border-bottom: none; }
+      .nav-cta.open { display: inline-flex; margin: 8px 16px; }
+    }
+
+    /* =====================================================
+       Hero
+       ===================================================== */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(180deg, var(--primary-50) 0%, #ffffff 100%);
+      padding: 80px 0 100px;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 12% 18%, rgba(14, 165, 233, 0.18), transparent 45%),
+        radial-gradient(circle at 88% 8%, rgba(20, 184, 166, 0.12), transparent 50%);
+      pointer-events: none;
+    }
+    .hero .container {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .hero-content h1 span {
+      background: linear-gradient(120deg, var(--primary-700), var(--primary-500) 60%, var(--accent));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .hero-content p.lead {
+      font-size: 1.15rem;
+      color: var(--muted);
+      max-width: 540px;
+      margin-top: 12px;
+    }
+    .hero-cta { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+    .hero-trust {
+      margin-top: 36px;
+      display: flex;
+      gap: 28px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .hero-trust-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--ink-2);
+      font-size: 0.92rem;
+      font-weight: 500;
+    }
+    .hero-trust-item svg { width: 22px; height: 22px; color: var(--primary-600); flex-shrink: 0; }
+    .hero-visual { position: relative; }
+    .hero-image {
+      width: 100%;
+      aspect-ratio: 5 / 6;
+      border-radius: 28px;
+      object-fit: cover;
+      box-shadow: var(--shadow-lg);
+    }
+    .hero-card {
+      position: absolute;
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 18px 20px;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .hero-card.card-1 { bottom: 24px; left: -24px; max-width: 260px; }
+    .hero-card.card-2 { top: 28px; right: -24px; max-width: 240px; }
+    .hero-card .icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: var(--primary-50);
+      color: var(--primary-700);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+    .hero-card .icon svg { width: 22px; height: 22px; }
+    .hero-card strong { display: block; font-size: 1rem; color: var(--ink); line-height: 1.2; }
+    .hero-card span { font-size: 0.83rem; color: var(--muted-2); }
+    @media (max-width: 960px) {
+      .hero { padding: 60px 0 80px; }
+      .hero .container { grid-template-columns: 1fr; gap: 48px; }
+      .hero-visual { order: -1; max-width: 460px; margin: 0 auto; width: 100%; }
+      .hero-card.card-1 { left: 8px; }
+      .hero-card.card-2 { right: 8px; }
+    }
+    @media (max-width: 480px) {
+      .hero-card.card-1, .hero-card.card-2 { display: none; }
+    }
+
+    /* =====================================================
+       Highlights bar
+       ===================================================== */
+    .highlights { padding: 0; background: #ffffff; }
+    .highlights .container {
+      transform: translateY(-40px);
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--line);
+      padding: 28px 32px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 28px;
+    }
+    .highlight { display: flex; align-items: flex-start; gap: 14px; }
+    .highlight .icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--primary-100), #ffffff);
+      color: var(--primary-700);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+    .highlight svg { width: 24px; height: 24px; }
+    .highlight h4 {
+      font-family: "Inter", sans-serif;
+      font-size: 1rem;
+      margin: 0 0 4px;
+      color: var(--ink);
+    }
+    .highlight p { margin: 0; font-size: 0.9rem; color: var(--muted-2); }
+    @media (max-width: 900px) { .highlights .container { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 520px) { .highlights .container { grid-template-columns: 1fr; padding: 24px; } }
+
+    /* =====================================================
+       About
+       ===================================================== */
+    .about .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: center;
+    }
+    .about-image {
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+      aspect-ratio: 4 / 5;
+      box-shadow: var(--shadow-lg);
+    }
+    .about-image img { width: 100%; height: 100%; object-fit: cover; }
+    .about-stats {
+      position: absolute;
+      bottom: 24px;
+      left: 24px;
+      right: 24px;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(8px);
+      border-radius: 16px;
+      padding: 18px 22px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .about-stats div { text-align: center; }
+    .about-stats strong {
+      display: block;
+      font-family: "Fraunces", serif;
+      font-size: 1.7rem;
+      color: var(--primary-800);
+      font-weight: 600;
+      line-height: 1;
+    }
+    .about-stats span { font-size: 0.8rem; color: var(--muted-2); }
+    .about-text ul { list-style: none; padding: 0; margin: 24px 0 28px; }
+    .about-text li {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 10px 0;
+      color: var(--ink-2);
+    }
+    .about-text li svg {
+      width: 22px;
+      height: 22px;
+      color: var(--accent);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    @media (max-width: 900px) {
+      .about .container { grid-template-columns: 1fr; gap: 48px; }
+      .about-image { max-width: 480px; margin: 0 auto; width: 100%; }
+    }
+
+    /* =====================================================
+       Services / Leistungen
+       ===================================================== */
+    .services { background: var(--bg-soft); }
+    .services-header { max-width: 760px; margin: 0 auto 48px; text-align: center; }
+    .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .service-card {
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .service-card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary-700), var(--primary-400));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--primary-100);
+    }
+    .service-card:hover::before { transform: scaleX(1); }
+    .service-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--primary-100), #ffffff);
+      color: var(--primary-700);
+      display: grid;
+      place-items: center;
+      margin-bottom: 18px;
+    }
+    .service-icon svg { width: 28px; height: 28px; }
+    .service-card h3 {
+      font-family: "Inter", sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin: 0 0 8px;
+      color: var(--ink);
+    }
+    .service-card p { margin: 0; font-size: 0.93rem; color: var(--muted-2); line-height: 1.55; }
+    @media (max-width: 1080px) { .services-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 800px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 480px) { .services-grid { grid-template-columns: 1fr; } }
+
+    /* =====================================================
+       Technologie / Diagnostik
+       ===================================================== */
+    .tech .container {
+      display: grid;
+      grid-template-columns: 1fr 1.05fr;
+      gap: 72px;
+      align-items: center;
+    }
+    .tech-list { list-style: none; padding: 0; margin: 24px 0 0; display: grid; gap: 14px; }
+    .tech-list li {
+      display: flex;
+      gap: 16px;
+      padding: 18px 20px;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      transition: border-color 0.2s, transform 0.15s;
+    }
+    .tech-list li:hover { border-color: var(--primary-100); transform: translateX(4px); }
+    .tech-list .icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: var(--primary-50);
+      color: var(--primary-700);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+    .tech-list svg { width: 22px; height: 22px; }
+    .tech-list strong { display: block; color: var(--ink); font-size: 1rem; }
+    .tech-list span { color: var(--muted-2); font-size: 0.9rem; }
+    .tech-image {
+      border-radius: 24px;
+      overflow: hidden;
+      aspect-ratio: 5 / 4;
+      box-shadow: var(--shadow-lg);
+    }
+    .tech-image img { width: 100%; height: 100%; object-fit: cover; }
+    @media (max-width: 900px) { .tech .container { grid-template-columns: 1fr; gap: 40px; } }
+
+    /* =====================================================
+       Team
+       ===================================================== */
+    .team { background: var(--bg-soft); }
+    .team-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+    .team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+    .team-card {
+      background: #ffffff;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--line);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .team-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .team-photo {
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--primary-100), var(--primary-50));
+    }
+    .team-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .team-card:hover .team-photo img { transform: scale(1.04); }
+    .team-info { padding: 22px 22px 24px; }
+    .team-info h3 {
+      font-family: "Inter", sans-serif;
+      font-size: 1.1rem;
+      margin: 0 0 4px;
+      color: var(--ink);
+    }
+    .team-role {
+      color: var(--primary-700);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .team-info p { margin: 12px 0 0; font-size: 0.92rem; color: var(--muted-2); }
+    @media (max-width: 1024px) { .team-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 540px) { .team-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 720px) {
+      .team-header { flex-direction: column; align-items: flex-start; }
+    }
+
+    /* =====================================================
+       Testimonials
+       ===================================================== */
+    .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .testimonial {
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 28px;
+      position: relative;
+    }
+    .stars { display: flex; gap: 2px; color: var(--gold); margin-bottom: 14px; }
+    .stars svg { width: 18px; height: 18px; }
+    .testimonial p {
+      color: var(--ink-2);
+      font-size: 1rem;
+      line-height: 1.6;
+      margin: 0 0 18px;
+    }
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+    }
+    .author-avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary-500), var(--primary-700));
+      color: #ffffff;
+      display: grid;
+      place-items: center;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+    .author-info strong { display: block; font-size: 0.95rem; color: var(--ink); }
+    .author-info span { font-size: 0.82rem; color: var(--muted-2); }
+    @media (max-width: 900px) { .testimonials-grid { grid-template-columns: 1fr; } }
+
+    /* =====================================================
+       Sprechzeiten / Standort
+       ===================================================== */
+    .visit { background: linear-gradient(180deg, #ffffff 0%, var(--primary-50) 100%); }
+    .visit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+    .visit-card {
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      box-shadow: var(--shadow-sm);
+    }
+    .visit-card h3 {
+      font-family: "Fraunces", serif;
+      font-size: 1.5rem;
+      margin: 0 0 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .visit-card h3 svg { width: 26px; height: 26px; color: var(--primary-600); }
+    .hours-list { list-style: none; padding: 0; margin: 0; }
+    .hours-list li {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 0.97rem;
+    }
+    .hours-list li:last-child { border-bottom: none; }
+    .hours-list li.today {
+      background: var(--primary-50);
+      margin: 0 -16px;
+      padding: 12px 16px;
+      border-radius: 10px;
+      border-bottom: none;
+      font-weight: 600;
+      color: var(--primary-800);
+    }
+    .hours-list li.today + li { border-top: none; }
+    .hours-list span:first-child { color: var(--ink-2); font-weight: 500; }
+    .hours-list span:last-child { color: var(--muted); }
+    .hours-list li.today span:last-child { color: var(--primary-700); font-weight: 600; }
+    .visit-note {
+      margin-top: 18px;
+      padding: 14px 18px;
+      background: var(--primary-50);
+      border-left: 3px solid var(--primary-500);
+      border-radius: 0 8px 8px 0;
+      font-size: 0.9rem;
+      color: var(--primary-900);
+    }
+    .visit-note strong { color: var(--primary-900); }
+    .location-info { display: grid; gap: 16px; }
+    .location-item { display: flex; gap: 14px; }
+    .location-item .icon {
+      width: 40px; height: 40px;
+      border-radius: 10px;
+      background: var(--primary-50);
+      color: var(--primary-700);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+    .location-item svg { width: 20px; height: 20px; }
+    .location-item strong {
+      display: block;
+      color: var(--ink);
+      font-size: 0.97rem;
+      margin-bottom: 2px;
+    }
+    .location-item span { color: var(--muted-2); font-size: 0.92rem; }
+    @media (max-width: 800px) { .visit-grid { grid-template-columns: 1fr; } }
+
+    /* =====================================================
+       CTA Banner
+       ===================================================== */
+    .cta-banner { padding: 80px 0; }
+    .cta-banner .container {
+      background: linear-gradient(135deg, var(--primary-900) 0%, var(--primary-700) 60%, var(--primary-500) 100%);
+      border-radius: var(--radius-lg);
+      padding: 56px 56px;
+      color: #ffffff;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 32px;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-banner .container::before {
+      content: "";
+      position: absolute;
+      width: 360px; height: 360px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.18), transparent 70%);
+      top: -100px;
+      right: -80px;
+    }
+    .cta-banner h2 { color: #ffffff; margin: 0 0 12px; }
+    .cta-banner p { color: rgba(255, 255, 255, 0.85); margin: 0; font-size: 1.05rem; }
+    .cta-banner-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      position: relative;
+      z-index: 1;
+    }
+    .cta-banner .btn-primary {
+      background: #ffffff;
+      color: var(--primary-800);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    }
+    .cta-banner .btn-primary:hover { background: var(--primary-50); }
+    @media (max-width: 800px) {
+      .cta-banner .container { grid-template-columns: 1fr; padding: 40px 28px; }
+    }
+
+    /* =====================================================
+       Footer
+       ===================================================== */
+    .site-footer { background: #0b1220; color: #cbd5e1; padding: 72px 0 28px; }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+      gap: 40px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .footer-brand { display: flex; flex-direction: column; gap: 16px; }
+    .footer-brand .brand { color: #ffffff; }
+    .footer-brand .brand-text strong { color: #ffffff; }
+    .footer-brand .brand-text span { color: #94a3b8; }
+    .footer-brand p { color: #94a3b8; font-size: 0.92rem; max-width: 320px; margin: 0; }
+    .footer-col h4 {
+      color: #ffffff;
+      font-family: "Inter", sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin: 0 0 18px;
+    }
+    .footer-col ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+    .footer-col a { color: #cbd5e1; font-size: 0.92rem; transition: color 0.15s; }
+    .footer-col a:hover { color: var(--primary-400); }
+    .footer-contact { display: grid; gap: 12px; font-size: 0.92rem; color: #cbd5e1; }
+    .footer-contact div { display: flex; gap: 10px; align-items: flex-start; }
+    .footer-contact svg {
+      width: 18px; height: 18px;
+      color: var(--primary-400);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 24px;
+      gap: 16px;
+      flex-wrap: wrap;
+      font-size: 0.85rem;
+      color: #94a3b8;
+    }
+    .footer-bottom a:hover { color: #ffffff; }
+    .footer-bottom-links { display: flex; gap: 18px; flex-wrap: wrap; }
+    @media (max-width: 900px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 540px) { .footer-grid { grid-template-columns: 1fr; } }
+
+    /* =====================================================
+       Reveal animations
+       ===================================================== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+      html { scroll-behavior: auto; }
+    }
+  </style>
 </head>
 <body>
-  <h1>Willkommen in unserer Arztpraxis</h1>
-  <p>Unsere Leistungen, Sprechzeiten und Kontaktdaten finden Sie hier.</p>
-  <p>Wir danken Ihnen, dass Sie unsere Website besuchen!</p>
+
+  <!-- ============ TOP INFO BAR ============ -->
+  <div class="topbar">
+    <div class="container">
+      <div class="topbar-info">
+        <span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <a href="tel:+4930123456789">+49&nbsp;30&nbsp;123&nbsp;456&nbsp;789</a>
+        </span>
+        <span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Mo–Fr 8:00–18:00 · Sa 9:00–13:00
+        </span>
+        <span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Friedrichstraße 142, 10117 Berlin-Mitte
+        </span>
+      </div>
+      <div class="topbar-actions">
+        <a href="#kontakt">Notfall</a>
+        <a href="#" aria-label="Sprache wechseln">DE&nbsp;|&nbsp;EN</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header">
+    <div class="container nav">
+      <a href="#" class="brand" aria-label="Augenzentrum Berlin – Startseite">
+        <span class="brand-logo" aria-hidden="true"></span>
+        <span class="brand-text">
+          <strong>Augenzentrum Berlin</strong>
+          <span>Praxis für Augenheilkunde</span>
+        </span>
+      </a>
+      <nav class="nav-menu" id="navMenu" aria-label="Hauptnavigation">
+        <a href="#leistungen">Leistungen</a>
+        <a href="#diagnostik">Diagnostik</a>
+        <a href="#team">Team</a>
+        <a href="#patienten">Patienten</a>
+        <a href="#sprechzeiten">Sprechzeiten</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+      <a href="#kontakt" class="btn btn-primary nav-cta" id="navCta">
+        Termin online buchen
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content reveal">
+        <p class="eyebrow">Augenheilkunde auf Spitzenniveau</p>
+        <h1>Klare Sicht. <span>Vertrauen,</span><br />das man sieht.</h1>
+        <p class="lead">
+          Im Augenzentrum Berlin verbinden wir modernste Medizintechnik mit
+          persönlicher Zuwendung. Vorsorge, Diagnostik und ambulante Operationen –
+          alles unter einem Dach im Herzen der Hauptstadt.
+        </p>
+        <div class="hero-cta">
+          <a href="#kontakt" class="btn btn-primary">
+            Termin online buchen
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a href="#leistungen" class="btn btn-ghost">Unsere Leistungen</a>
+        </div>
+        <div class="hero-trust">
+          <div class="hero-trust-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            Alle Kassen &amp; Privat
+          </div>
+          <div class="hero-trust-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            Zertifiziertes OP-Zentrum
+          </div>
+          <div class="hero-trust-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            Mehrsprachiges Team
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual reveal">
+        <img
+          class="hero-image"
+          src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&w=1100&q=80"
+          alt="Augenärztin untersucht Patient mit Spaltlampe"
+          loading="eager"
+        />
+        <div class="hero-card card-1">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+          <div>
+            <strong>30+ Jahre</strong>
+            <span>Erfahrung in Augenchirurgie</span>
+          </div>
+        </div>
+        <div class="hero-card card-2">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <div>
+            <strong>4.9 / 5.0</strong>
+            <span>1.200+ Patientenbewertungen</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HIGHLIGHTS BAR ============ -->
+  <section class="highlights">
+    <div class="container reveal">
+      <div class="highlight">
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div>
+          <h4>Kurze Wartezeiten</h4>
+          <p>Termin meist innerhalb weniger Tage – auch online buchbar.</p>
+        </div>
+      </div>
+      <div class="highlight">
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
+        </div>
+        <div>
+          <h4>Modernste Diagnostik</h4>
+          <p>OCT, Topographie, Fundus-Imaging und KI-gestützte Auswertung.</p>
+        </div>
+      </div>
+      <div class="highlight">
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <div>
+          <h4>Alle Kassen &amp; Privat</h4>
+          <p>Gesetzlich, privat und Selbstzahler – wir beraten Sie umfassend.</p>
+        </div>
+      </div>
+      <div class="highlight">
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+        <div>
+          <h4>Mehrsprachig</h4>
+          <p>Beratung auf Deutsch, Englisch, Türkisch, Russisch und Französisch.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="about" id="praxis">
+    <div class="container">
+      <div class="about-image reveal">
+        <img
+          src="https://images.unsplash.com/photo-1631815589968-fdb09a223b1e?auto=format&fit=crop&w=900&q=80"
+          alt="Modernes Empfangs- und Wartezimmer der Augenarztpraxis"
+        />
+        <div class="about-stats">
+          <div>
+            <strong>15.000+</strong>
+            <span>Patienten / Jahr</span>
+          </div>
+          <div>
+            <strong>8</strong>
+            <span>Fachärzt:innen</span>
+          </div>
+          <div>
+            <strong>2.500+</strong>
+            <span>Operationen jährlich</span>
+          </div>
+        </div>
+      </div>
+      <div class="about-text reveal">
+        <p class="eyebrow">Willkommen im Augenzentrum Berlin</p>
+        <h2>Spitzenmedizin mit Herz – im Herzen Berlins</h2>
+        <p>
+          Seit über drei Jahrzehnten stehen wir für moderne Augenheilkunde auf
+          universitärem Niveau. Auf 1.200&nbsp;m² vereinen wir Diagnostik,
+          konservative Therapie und ein zertifiziertes ambulantes OP-Zentrum.
+        </p>
+        <ul>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <span><strong>Universitäre Expertise</strong> – Fachärzt:innen mit Lehre an der Charité</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <span><strong>Eigenes OP-Zentrum</strong> für Katarakt, Refraktive Chirurgie &amp; intravitreale Therapie</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <span><strong>Barrierefreie Praxis</strong> mit ruhiger Atmosphäre und kurzer Wartezeit</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <span><strong>Persönliche Betreuung</strong> – ein Ansprechpartner über die gesamte Behandlung</span>
+          </li>
+        </ul>
+        <a href="#team" class="btn btn-ghost">Unser Team kennenlernen</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SERVICES ============ -->
+  <section class="services" id="leistungen">
+    <div class="container">
+      <div class="services-header reveal">
+        <p class="eyebrow" style="justify-content: center;">Unser Leistungsspektrum</p>
+        <h2>Augenheilkunde in voller Bandbreite</h2>
+        <p>Von der jährlichen Vorsorge bis zur komplexen Mikrochirurgie – wir begleiten Sie in jeder Lebenslage rund um Ihre Augengesundheit.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+          <h3>Vorsorge &amp; Check-up</h3>
+          <p>Umfassende Augenuntersuchung inkl. Sehschärfe, Augendruck und Netzhautbild.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><line x1="12" y1="3" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="21"/></svg>
+          </div>
+          <h3>Grauer Star (Katarakt)</h3>
+          <p>Mikrochirurgische Linsen-OP mit Premium- und Multifokallinsen.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6"/><circle cx="12" cy="14" r="8"/><circle cx="12" cy="14" r="3"/></svg>
+          </div>
+          <h3>Grüner Star (Glaukom)</h3>
+          <p>Früherkennung mit OCT, Gesichtsfeld &amp; modernste laserbasierte Therapien.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+          </div>
+          <h3>Makula &amp; Netzhaut</h3>
+          <p>AMD, diabetische Retinopathie, IVOM-Therapie – alles in unserer Hand.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l4-4 4 4 6-6 4 4"/><path d="M21 21H3"/></svg>
+          </div>
+          <h3>LASIK &amp; Refraktive OP</h3>
+          <p>Femto-LASIK, SMILE und ICL – Ihre Brille, Geschichte.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="11" r="3"/><circle cx="17" cy="13" r="2"/><path d="M3 21c1-3 4-5 7-5"/><path d="M14 21c0-2 2-3 4-3s4 1 4 3"/></svg>
+          </div>
+          <h3>Kinder­augen­heilkunde</h3>
+          <p>Sehschule, Schielbehandlung &amp; kindgerechte Diagnostik ab dem 1. Lebensjahr.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a4 4 0 0 0-4 4c0 2 1.5 3 1.5 5h5c0-2 1.5-3 1.5-5a4 4 0 0 0-4-4z"/><line x1="9" y1="17" x2="15" y2="17"/><line x1="10" y1="21" x2="14" y2="21"/></svg>
+          </div>
+          <h3>Trockenes Auge</h3>
+          <p>Spezialsprechstunde mit Tränenfilm-Analyse und IPL-Therapie.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="12" r="4"/><circle cx="18" cy="12" r="4"/><line x1="10" y1="12" x2="14" y2="12"/></svg>
+          </div>
+          <h3>Brille &amp; Kontaktlinsen</h3>
+          <p>Individuelle Anpassung – auch bei Keratokonus und nach Augenoperationen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TECH / DIAGNOSTIK ============ -->
+  <section class="tech" id="diagnostik">
+    <div class="container">
+      <div class="reveal">
+        <p class="eyebrow">Modernste Technologie</p>
+        <h2>Diagnostik, die jedes Detail sieht</h2>
+        <p>
+          Wir investieren konsequent in die beste verfügbare Technik – damit
+          Diagnosen früher gestellt werden und Behandlungen messbar präziser
+          gelingen.
+        </p>
+        <ul class="tech-list">
+          <li>
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h3l3-9 6 18 3-9h3"/></svg>
+            </div>
+            <div>
+              <strong>Hochauflösende OCT (Spectralis)</strong>
+              <span>Schichtbilder der Netzhaut bis auf 5&nbsp;µm genau</span>
+            </div>
+          </li>
+          <li>
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14 14 0 0 1 0 20"/><path d="M12 2a14 14 0 0 0 0 20"/><line x1="2" y1="12" x2="22" y2="12"/></svg>
+            </div>
+            <div>
+              <strong>Hornhaut-Topographie &amp; Pachymetrie</strong>
+              <span>Präzise OP-Planung für Katarakt, LASIK und Keratokonus</span>
+            </div>
+          </li>
+          <li>
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+            </div>
+            <div>
+              <strong>KI-gestützte Bildanalyse</strong>
+              <span>Frühe Erkennung von AMD, Glaukom &amp; diabetischer Retinopathie</span>
+            </div>
+          </li>
+          <li>
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="9"/></svg>
+            </div>
+            <div>
+              <strong>Femtosekunden- &amp; Excimer-Laser</strong>
+              <span>Schonende, klingenlose Verfahren in unserem OP-Zentrum</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="tech-image reveal">
+        <img
+          src="https://images.unsplash.com/photo-1582719471384-894fbb16e074?auto=format&fit=crop&w=1100&q=80"
+          alt="OCT Untersuchung mit modernem augenärztlichen Diagnosegerät"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TEAM ============ -->
+  <section class="team" id="team">
+    <div class="container">
+      <div class="team-header reveal">
+        <div>
+          <p class="eyebrow">Unsere Fachärzt:innen</p>
+          <h2>Erfahrene Spezialist:innen, die Ihnen zuhören</h2>
+        </div>
+        <a href="#kontakt" class="btn btn-ghost">Termin vereinbaren</a>
+      </div>
+      <div class="team-grid">
+        <div class="team-card reveal">
+          <div class="team-photo">
+            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=600&q=80" alt="Porträt Dr. med. Anna Hoffmann" />
+          </div>
+          <div class="team-info">
+            <span class="team-role">Ärztliche Leitung</span>
+            <h3>Dr. med. Anna Hoffmann</h3>
+            <p>Fachärztin für Augenheilkunde, Schwerpunkt Katarakt &amp; Refraktive Chirurgie.</p>
+          </div>
+        </div>
+        <div class="team-card reveal">
+          <div class="team-photo">
+            <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=600&q=80" alt="Porträt Dr. med. Michael Becker" />
+          </div>
+          <div class="team-info">
+            <span class="team-role">Glaukom-Spezialist</span>
+            <h3>Dr. med. Michael Becker</h3>
+            <p>Spezialist für Glaukom-Diagnostik, MIGS &amp; chirurgische Drucksenkung.</p>
+          </div>
+        </div>
+        <div class="team-card reveal">
+          <div class="team-photo">
+            <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=600&q=80" alt="Porträt Dr. med. Sara Yilmaz" />
+          </div>
+          <div class="team-info">
+            <span class="team-role">Netzhaut &amp; AMD</span>
+            <h3>Dr. med. Sara Yilmaz</h3>
+            <p>Expertin für Makulaerkrankungen, IVOM-Therapie und diabetische Retinopathie.</p>
+          </div>
+        </div>
+        <div class="team-card reveal">
+          <div class="team-photo">
+            <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=600&q=80" alt="Porträt Dr. med. Jonas Klein" />
+          </div>
+          <div class="team-info">
+            <span class="team-role">Kinderaugenheilkunde</span>
+            <h3>Dr. med. Jonas Klein</h3>
+            <p>Schwerpunkt Sehschule, Schielbehandlung und pädiatrische Diagnostik.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIALS ============ -->
+  <section id="patienten">
+    <div class="container">
+      <div class="services-header reveal">
+        <p class="eyebrow" style="justify-content: center;">Was unsere Patienten sagen</p>
+        <h2>Vertrauen, das man weiterempfiehlt</h2>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial reveal">
+          <div class="stars" aria-label="5 von 5 Sternen">
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9 17 14 19 21 12 17 5 21 7 14 2 9 9 9 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9 17 14 19 21 12 17 5 21 7 14 2 9 9 9 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9 17 14 19 21 12 17 5 21 7 14 2 9 9 9 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9 17 14 19 21 12 17 5 21 7 14 2 9 9 9 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9 17 14 19 21 12 17 5 21 7 14 2 9 9 9 12 2"/></svg>
+          </div>
+          <p>„Vom ersten Anruf bis zur OP wurde ich rundum betreut. Die Praxis ist hochmodern und das gesamte Team ausgesprochen freundlich. Endlich wieder klare Sicht!"</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">PE</div>
+            <div class="author-info">
+              <strong>Petra E.</strong>
+              <span>Katarakt-Operation · 2024</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial reveal">
+          <div class="stars" aria-label="5 von 5 Sternen">
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9 17 14 19 21 12 17 5 21 7 14 2 9 9 9 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9 17 14 19 21 12 17 5 21 7 14 2 9 9 9 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9 17 14 19 21 12 17 5 21 7 14 2 9 9 9 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9 17 14 19 21 12 17 5 21 7 14 2 9 9 9 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9 17 14 19 21 12 17 5 21 7 14 2 9 9 9 12 2"/></svg>
+          </div>
+          <p>„Dr. Hoffmann nimmt sich wirklich Zeit, erklärt jeden Schritt und beantwortet jede Frage. So souverän und einfühlsam habe ich Augenheilkunde noch nie erlebt."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">MK</div>
+            <div class="author-info">
+              <strong>Markus K.</strong>
+              <span>LASIK · 2025</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial reveal">
+          <div class="stars" aria-label="5 von 5 Sternen">
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9 17 14 19 21 12 17 5 21 7 14 2 9 9 9 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9 17 14 19 21 12 17 5 21 7 14 2 9 9 9 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9 17 14 19 21 12 17 5 21 7 14 2 9 9 9 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9 17 14 19 21 12 17 5 21 7 14 2 9 9 9 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15 9 22 9 17 14 19 21 12 17 5 21 7 14 2 9 9 9 12 2"/></svg>
+          </div>
+          <p>„Selbst unsere kleine Tochter ist gerne dort gewesen – das Team in der Sehschule hat eine wunderbare Art mit Kindern. Wir sind als Familie dankbar."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">FB</div>
+            <div class="author-info">
+              <strong>Familie B.</strong>
+              <span>Kinderaugenheilkunde · 2025</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SPRECHZEITEN / KONTAKT ============ -->
+  <section class="visit" id="sprechzeiten">
+    <div class="container">
+      <div class="services-header reveal">
+        <p class="eyebrow" style="justify-content: center;">Sprechzeiten &amp; Anfahrt</p>
+        <h2>Hier finden Sie uns</h2>
+      </div>
+      <div class="visit-grid">
+        <div class="visit-card reveal">
+          <h3>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Unsere Sprechzeiten
+          </h3>
+          <ul class="hours-list" id="hoursList">
+            <li data-day="1"><span>Montag</span><span>8:00 – 18:00</span></li>
+            <li data-day="2"><span>Dienstag</span><span>8:00 – 18:00</span></li>
+            <li data-day="3"><span>Mittwoch</span><span>8:00 – 14:00</span></li>
+            <li data-day="4"><span>Donnerstag</span><span>8:00 – 19:00</span></li>
+            <li data-day="5"><span>Freitag</span><span>8:00 – 16:00</span></li>
+            <li data-day="6"><span>Samstag</span><span>9:00 – 13:00</span></li>
+            <li data-day="0"><span>Sonntag</span><span>geschlossen</span></li>
+          </ul>
+          <div class="visit-note">
+            <strong>Akute Notfälle</strong> können wir außerhalb der Sprechzeiten
+            telefonisch koordinieren – rufen Sie uns an unter
+            <a href="tel:+4930123456789" style="color: var(--primary-700); text-decoration: underline;">+49&nbsp;30&nbsp;123&nbsp;456&nbsp;789</a>.
+          </div>
+        </div>
+        <div class="visit-card reveal" id="kontakt">
+          <h3>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Anfahrt &amp; Kontakt
+          </h3>
+          <div class="location-info">
+            <div class="location-item">
+              <div class="icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <strong>Augenzentrum Berlin</strong>
+                <span>Friedrichstraße 142, 10117 Berlin-Mitte</span>
+              </div>
+            </div>
+            <div class="location-item">
+              <div class="icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <div>
+                <strong>Telefon</strong>
+                <span><a href="tel:+4930123456789">+49&nbsp;30&nbsp;123&nbsp;456&nbsp;789</a></span>
+              </div>
+            </div>
+            <div class="location-item">
+              <div class="icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div>
+                <strong>E-Mail</strong>
+                <span><a href="mailto:termin@augenzentrum-berlin.de">termin@augenzentrum-berlin.de</a></span>
+              </div>
+            </div>
+            <div class="location-item">
+              <div class="icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="3"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+              </div>
+              <div>
+                <strong>Anreise</strong>
+                <span>U-/S-Bahnhof Friedrichstraße (4&nbsp;Min.) · Tiefgarage im Haus</span>
+              </div>
+            </div>
+          </div>
+          <a href="tel:+4930123456789" class="btn btn-primary" style="margin-top: 24px; width: 100%;">
+            Jetzt anrufen
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA BANNER ============ -->
+  <section class="cta-banner">
+    <div class="container reveal">
+      <div>
+        <h2>Termin in wenigen Klicks vereinbaren</h2>
+        <p>
+          Online buchbar – auch außerhalb der Sprechzeiten. Sie erhalten
+          umgehend eine Bestätigung per E-Mail.
+        </p>
+      </div>
+      <div class="cta-banner-actions">
+        <a href="#kontakt" class="btn btn-primary">
+          Termin online buchen
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="tel:+4930123456789" class="btn btn-outline-light">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          +49&nbsp;30&nbsp;123&nbsp;456&nbsp;789
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="brand">
+            <span class="brand-logo" aria-hidden="true"></span>
+            <span class="brand-text">
+              <strong>Augenzentrum Berlin</strong>
+              <span>Praxis für Augenheilkunde</span>
+            </span>
+          </a>
+          <p>Moderne Augenheilkunde mit menschlicher Zuwendung – im Herzen Berlins seit 1992.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Praxis</h4>
+          <ul>
+            <li><a href="#praxis">Über uns</a></li>
+            <li><a href="#team">Team</a></li>
+            <li><a href="#diagnostik">Technologie</a></li>
+            <li><a href="#patienten">Patientenstimmen</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Leistungen</h4>
+          <ul>
+            <li><a href="#leistungen">Vorsorge</a></li>
+            <li><a href="#leistungen">Grauer &amp; Grüner Star</a></li>
+            <li><a href="#leistungen">Makula &amp; Netzhaut</a></li>
+            <li><a href="#leistungen">LASIK &amp; Refraktive OP</a></li>
+            <li><a href="#leistungen">Kinder­augen­heilkunde</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Kontakt</h4>
+          <div class="footer-contact">
+            <div>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Friedrichstraße 142<br />10117 Berlin-Mitte</span>
+            </div>
+            <div>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <a href="tel:+4930123456789">+49&nbsp;30&nbsp;123&nbsp;456&nbsp;789</a>
+            </div>
+            <div>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <a href="mailto:termin@augenzentrum-berlin.de">termin@augenzentrum-berlin.de</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Augenzentrum Berlin · Alle Rechte vorbehalten.</span>
+        <div class="footer-bottom-links">
+          <a href="#">Impressum</a>
+          <a href="#">Datenschutz</a>
+          <a href="#">AGB</a>
+          <a href="#">Karriere</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    /* ===== Mobile Navigation Toggle ===== */
+    (function () {
+      const toggle = document.getElementById('navToggle');
+      const menu = document.getElementById('navMenu');
+      const cta = document.getElementById('navCta');
+      if (!toggle || !menu) return;
+      toggle.addEventListener('click', function () {
+        const isOpen = menu.classList.toggle('open');
+        if (cta) cta.classList.toggle('open', isOpen);
+        toggle.setAttribute('aria-expanded', String(isOpen));
+      });
+      menu.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          menu.classList.remove('open');
+          if (cta) cta.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    })();
+
+    /* ===== Highlight today's opening hours ===== */
+    (function () {
+      const list = document.getElementById('hoursList');
+      if (!list) return;
+      const today = new Date().getDay();
+      const todayItem = list.querySelector('li[data-day="' + today + '"]');
+      if (todayItem) todayItem.classList.add('today');
+    })();
+
+    /* ===== Intersection Observer for reveal animations ===== */
+    (function () {
+      if (!('IntersectionObserver' in window)) {
+        document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('visible'); });
+        return;
+      }
+      const obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+      document.querySelectorAll('.reveal').forEach(function (el) { obs.observe(el); });
+    })();
+  </script>
 </body>
 </html>
